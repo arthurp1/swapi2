@@ -5,7 +5,7 @@ class CategoryList extends Component {
   createList() {
     return this.props.categories.map((category => {
       return (
-        <li>{category}</li>
+        <li key={category}>{category}</li>
       )
     }));
   }
