@@ -5,7 +5,7 @@ export default function(state = null, action) { // OR state = []
 
   switch (action.type) {
   case FETCH_CATEGORIES:
-    return [ action.payload.data ]; // OR with , ...state]
+    return [ action.payload.data.keys ]; // OR with , ...state]
   }
   return state;
 }

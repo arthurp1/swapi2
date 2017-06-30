@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class CategoryList extends Component {
-
-  renderCategories(data) {
-    const temps = cityData.list.map(weather => weather.main.temp)
-
+  createList() {
+    return this.props.categories.map((category => {
+      return (
+        <li>{category}</li>
+      )
+    }));
   }
 
   render() {
     return (
-      <div>
-        <h1>Categories</h1>
-        <ul>
-          {this.props.categories.map(this.renderCategories)}
-        </ul>
-      </div>
+      <ul>
+        {this.createList}
+      </ul>
     )
   }
+
 
   // render() {
   //   const { categories } = this.state
