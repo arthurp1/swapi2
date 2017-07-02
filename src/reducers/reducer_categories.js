@@ -7,13 +7,10 @@ export default function(state = null, action) { // OR state = []
   switch (action.type) {
   case FETCH_CATEGORIES:
     return _.keys([ action.payload.data ]); // OR with , ...state]
+    console.log(action.payload.data)
   }
   return state;
+  console.log(state);
 }
 
 console.log('Prima')
-
-// VOLGENS MIJ MOET DIT NOG OP EEN MANIER VERWERKT WORDEN
-// .then(function(response) {
-//     const categories = Object.keys(response.data)
-//     that.setState({categories: categories })
