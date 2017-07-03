@@ -1,43 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchCategoryItems } from '../actions/fetch_category_items';
 
 class CategoryList extends Component {
+
   createList() {
-    return this.props.categories.map((category => {
+    return this.props.categories.map((category) => {
       return (
-        <li key={category}>{category}</li>
-      )
-    }));
+        <li key={category} onClick={() => this.props.fetchCategoryItems(category)}>
+          {category}
+        </li>
+      );
+    });
   }
 
   render() {
+    // if(!this.props.categories) {
+    //   return <h2>Select Category<h2>
+    // }
     return (
       <ul>
-        {this.createList}
+        {this.createList()}
       </ul>
-    )
+    );
   }
-
-
-  // render() {
-  //   const { categories } = this.state
-  //   const list = categories.map((category) => {
-  //     <CategoryItem key={category} item={category} />
-  //     })
-  //   return (
-  //     <div>
-  //       <h1>This is a Starwars App</h1>
-  //       <div>
-  //         {list}
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
 }
 
-function mapStateToProps({ categories }) {
-  return { categories }; // same as: { categories: categories }
+function mapStateToProps(state) { // takes a piece of the app store (defined in as the argument) and passes it into your container as a prop
+  return { categories: state.categories };
 }
 
-export default connect(mapStateToProps)(CategoryList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchCategoryItems: fetchCategoryItems }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryList); // connect function makes sure that the component gets the new state everytime
+//state is updated in the store and thus making it a container

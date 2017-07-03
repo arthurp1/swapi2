@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchCategories } from '../actions/index';
 
 class ShowCategories extends Component {
-  constructor(props) {
+  constructor(props) { // constructor initializes state
     super(props);
 
     this.state = { categories: [] };
@@ -32,7 +32,7 @@ class ShowCategories extends Component {
 console.log('Hier gaat het goed')
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCategories }, dispatch); //
+  return bindActionCreators({ fetchCategories }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(ShowCategories);
