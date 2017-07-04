@@ -29,8 +29,6 @@ class ShowCategories extends Component {
   }
 }
 
-console.log('Hier gaat het goed')
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchCategories }, dispatch);
 }

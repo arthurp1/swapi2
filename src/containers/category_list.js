@@ -16,9 +16,6 @@ class CategoryList extends Component {
   }
 
   render() {
-    // if(!this.props.categories) {
-    //   return <h2>Select Category<h2>
-    // }
     return (
       <ul>
         {this.createList()}

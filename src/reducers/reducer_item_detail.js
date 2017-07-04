@@ -6,7 +6,7 @@ export default function(state = [], action) {
 
   switch (action.type) {
     case FETCH_ITEM_DETAIL:
-      return _.keys( action.payload.data );
+      return _.values( action.payload.data );
       break;
   }
   return state;

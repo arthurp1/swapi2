@@ -5,11 +5,10 @@ import { fetchCategoryItems } from '../actions/fetch_category_items'; // need th
 import { fetchItemDetail } from '../actions/fetch_item_detail';
 
 class ItemList extends Component {
-
   createItemList() {
     return this.props.categoryItems.map((categoryItem) => {
       return (
-        <li key={categoryItem} onClick={() => this.props.fetchItemDetail(categoryItem)}>
+        <li key={categoryItem.url} onClick={() => this.props.fetchItemDetail(categoryItem)}>
           {categoryItem}
         </li>
       );
@@ -17,9 +16,6 @@ class ItemList extends Component {
   }
 
   render() {
-    // if(!this.props.categories) {
-    //   return <h2>Select Category<h2>
-    // }
     return (
       <ul>
         {this.createItemList()}

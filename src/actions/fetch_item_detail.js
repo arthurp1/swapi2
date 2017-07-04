@@ -4,7 +4,6 @@ const ROOT_URL = 'http://swapi.co/api/';
 export const FETCH_ITEM_DETAIL = 'FETCH_ITEM_DETAIL';
 
 export function fetchItemDetail(categoryItem) {
-
   const url_category_item = `${ROOT_URL}${category}/${categoryItem}/`;
 
   // const url_people = `${ROOT_URL}${people/}`;
