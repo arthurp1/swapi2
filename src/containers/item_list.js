@@ -6,10 +6,11 @@ import { fetchItemDetail } from '../actions/fetch_item_detail';
 
 class ItemList extends Component {
   createItemList() {
+    console.log(this.props.categoryItems)
     return this.props.categoryItems.map((categoryItem) => {
       return (
-        <li key={categoryItem.url} onClick={() => this.props.fetchItemDetail(categoryItem)}>
-          {categoryItem}
+        <li key={categoryItem.url} >
+            {categoryItem.name}
         </li>
       );
     });

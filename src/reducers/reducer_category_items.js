@@ -6,8 +6,9 @@ export default function(state=[], action) {
 
   switch (action.type) {
     case FETCH_CATEGORY_ITEMS:
-
-      return _.values( action.payload.data.results[5].name || action.payload.data.results[5].title )
+    console.log(" this one..")
+    console.log(action.payload)
+      return _.values( action.payload.data.results )
       // if(category === 'films') {
       //   return _.values( action.payload.data.results[5].title );
       // }
